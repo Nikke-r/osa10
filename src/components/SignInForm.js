@@ -23,24 +23,16 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         padding: 10,
     },
-    disabled: {
-        backgroundColor: theme.colors.disabled
-    }
 });
 
 const SignInForm = ({ onSubmit, isValid }) => {
-
-    const buttonStyles = [
-        styles.button,
-        !isValid && styles.disabled
-    ];
 
     return(
         <View style={styles.container}>
             <FormikTextInput name="username" placeholder="Username" style={styles.inputField} />
             <FormikTextInput name="password" placeholder="Password" style={styles.inputField} secureTextEntry />
             <TouchableWithoutFeedback onPress={onSubmit} disabled={!isValid}>
-                <Text fontWeight='bold' style={buttonStyles}>Login</Text>
+                <Text fontWeight='bold' style={styles.button}>Login</Text>
             </TouchableWithoutFeedback>
         </View>
     );
