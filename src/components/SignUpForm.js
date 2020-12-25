@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, TouchableWithoutFeedback, View } from 'react-native';
-import theme from '../themes';
+import {TouchableWithoutFeedback, View, StyleSheet} from 'react-native';
 import FormikTextInput from './FormikTextInput';
 import Text from './Text';
+import theme from '../themes';
 
 const styles = StyleSheet.create({
     inputField: {
@@ -25,17 +25,17 @@ const styles = StyleSheet.create({
     },
 });
 
-const SignInForm = ({ onSubmit, isValid }) => {
-
+const SignUpForm = ({ onSubmit }) => {
     return(
         <View style={styles.container}>
-            <FormikTextInput testID="usernameField" name="username" placeholder="Username" style={styles.inputField} />
-            <FormikTextInput testID="passwordField" name="password" placeholder="Password" style={styles.inputField} secureTextEntry />
-            <TouchableWithoutFeedback testID="submitButton" onPress={onSubmit} disabled={!isValid}>
-                <Text fontWeight='bold' style={styles.button}>Login</Text>
+            <FormikTextInput name="username" placeholder="Username" style={styles.inputField} /> 
+            <FormikTextInput name="password" placeholder="Password" style={styles.inputField} secureTextEntry />
+            <FormikTextInput name="confirmPassword" placeholder="Confirm Password" style={styles.inputField} secureTextEntry />
+            <TouchableWithoutFeedback onPress={onSubmit}>
+                <Text style={styles.button}>Sign Up</Text>
             </TouchableWithoutFeedback>
         </View>
     );
 };
 
-export default SignInForm;
+export default SignUpForm;

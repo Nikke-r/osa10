@@ -5,6 +5,10 @@ import AppBar from './AppBar';
 import RepositoryList from './RepositoryList';
 import { Switch, Route } from 'react-router-native';
 import SignIn from './SignIn';
+import RepositoryDetails from './RepositoryDetails';
+import CreateReview from './CreateReview';
+import SignUp from './SignUp';
+import OwnReviews from './OwnReviews';
 
 const styles = StyleSheet.create({
     container: {
@@ -21,8 +25,20 @@ const Main = () => {
                 <Route exact path='/'>
                     <RepositoryList />
                 </Route>
+                <Route path='/review'>
+                    <CreateReview />
+                </Route>
+                <Route path='/ownreviews'>
+                    <OwnReviews />
+                </Route>
+                <Route path='/signup'>
+                    <SignUp />
+                </Route>
                 <Route path='/signin'>
                     <SignIn />
+                </Route>
+                <Route path='/:id'>
+                    <RepositoryDetails />
                 </Route>
             </Switch>
         </View>

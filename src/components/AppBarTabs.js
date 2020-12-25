@@ -38,15 +38,34 @@ const AppBarTabs = () => {
                 </Link>
             </TouchableWithoutFeedback>
             {data && data.authorizedUser !== null ?
-            <TouchableWithoutFeedback onPress={signOut}>
-                <Text style={styles.text}>Sign Out</Text>
-            </TouchableWithoutFeedback>
+            <>
+                <TouchableWithoutFeedback>
+                    <Link to='/review'>
+                        <Text style={styles.text}>Create a review</Text>
+                    </Link>
+                </TouchableWithoutFeedback>
+                <TouchableWithoutFeedback>
+                    <Link to='/ownreviews'>
+                        <Text style={styles.text}>Own reviews</Text>
+                    </Link>
+                </TouchableWithoutFeedback>
+                <TouchableWithoutFeedback onPress={signOut}>
+                    <Text style={styles.text}>Sign Out</Text>
+                </TouchableWithoutFeedback>
+            </>
             :
-            <TouchableWithoutFeedback>
-                <Link to='/signin'>
-                    <Text style={styles.text}>Sign In</Text>
-                </Link>
-            </TouchableWithoutFeedback>}
+            <>
+                <TouchableWithoutFeedback>
+                    <Link to='/signin'>
+                        <Text style={styles.text}>Sign In</Text>
+                    </Link>
+                </TouchableWithoutFeedback>
+                <TouchableWithoutFeedback>
+                    <Link to='/signup'>
+                        <Text style={styles.text}>Sign Up</Text>
+                    </Link>
+                </TouchableWithoutFeedback>
+            </>}
         </View>
     );
 };

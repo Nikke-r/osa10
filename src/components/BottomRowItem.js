@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
 const BottomRowItem = (props) => {
     return(
         <View style={styles.center}>
-            <Text style={styles.countText}> {props.count} </Text>
+            <Text testID={props.testID} style={styles.countText}> {props.count} </Text>
             <Text> {props.name} </Text>
         </View>
     );
